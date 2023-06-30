@@ -46,8 +46,10 @@ struct FilledHeart: View {
     var body: some View {
         ZStack {
             Heart().stroke(lineWidth: 2)
+            
             GeometryReader { geometry in
                 let rect = CGRect(x: 0, y: geometry.size.height * (1 - fillPercentage), width: geometry.size.width, height: geometry.size.height * fillPercentage)
+                
                 Heart()
                     .fill(Color.green)
                     .clipShape(Rectangle().path(in: rect))
